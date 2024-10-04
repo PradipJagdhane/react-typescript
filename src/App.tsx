@@ -1,13 +1,11 @@
 import React from 'react';
 import './App.css';
-import AddTodo from './components/pages/todo/AddTodo';
-import TodoList from './components/pages/todo/todoList';
-import UserList from './components/pages/userList';
-import UserProfile from './components/hooks/useState/usestateObj';
-import ExampleEffect from './components/hooks/useEffect/useEffect';
-import FetchData from './components/hooks/useEffect/dataFetch';
+
 import FilterItems from './components/hooks/useMemo/filterData';
 import NewCounter from './components/hooks/useReducer/CounterEx';
+import ThemeSwitcher from './components/hooks/useContext/ThemeSwitcher';
+import { Themprovider } from './components/hooks/useContext/ThemeContext';
+import SearchItems from './components/hooks/useCallback/serachItem';
 
 function App() {
   return (
@@ -22,8 +20,15 @@ function App() {
       {/* <UserProfile /> */}
       {/* <ExampleEffect /> */}
       {/* <FetchData /> */}
-      <FilterItems />
+      {/* <FilterItems /> */}
       <NewCounter />
+      <Themprovider>
+      <ThemeSwitcher />
+
+      </Themprovider>
+
+      <SearchItems />
+
     </div>
   );
 }
